@@ -22,7 +22,7 @@
         </div>
         <div class="card-reveal">
           <span class="card-title activator grey-text text-darken-4">{{ product.description }}<i class="material-icons right">more_vert</i></span>
-            
+          <p>Click <a href="{% url 'view_specific_product' product.id %}">here</a> to view the full thing</p>
         </div>
      </div>
 
@@ -30,10 +30,12 @@
 
 </div>
 
-<div class="pagination">
+<ul class="pagination">
     <span class="step-links">
         {% if products.has_previous %}
+        <li class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
             <a href="?page=1">&laquo; first</a>
+            
             <a href="?page={{ products.previous_page_number }}">previous</a>
         {% endif %}
 
@@ -46,6 +48,6 @@
             <a href="?page={{ products.paginator.num_pages }}">last &raquo;</a>
         {% endif %}
     </span>
-</div>
+</ul>
 
 {% endblock %}

@@ -16,3 +16,7 @@ def all_products(request):
         products = paginator.page(paginator.num_pages)
  
     return render(request, "products.html", {"products": products})
+    
+def view_specific_product(request, id):
+    products = Product.objects.all()
+    return render(request, "product.html")

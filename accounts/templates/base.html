@@ -11,15 +11,21 @@
 <body>
      <nav>
     <div class="nav-wrapper">
-      <a href="#" class="brand-logo right">Logo</a>
+      <a href="{% url 'index' %}" class="brand-logo right">Logo</a>
       <ul class="nav navbar-nav navbar-right">
                     {% if user.is_authenticated %}
                         <li><a href="{% url 'profile' %}">Profile</a></li>
-                        <li><a href="{% url 'logout' %}">Log Out</a></li>
+                        <li><a href="{% url 'logout' %}">Logout</a></li>
                     {%  else %}
                         <li><a href="{% url 'register' %}">Register</a></li>
                         <li><a href="{% url 'login' %}">Log In</a></li>
                     {% endif %}
+                    <li>
+                        <a href="{% url 'view_cart' %}">Cart {% if product_count > 0 %}
+                            <label class="badge badge-warning">{{ product_count }}</label>
+                            {% endif %}
+                        </a>
+                    </li>
                 </ul>
     </div>
   </nav>
@@ -33,10 +39,15 @@
             </div>
         </div>
     {% endif %}
+    
     <div class="container">
-        {% block content %} 
-        
-        {% endblock %}
+        <div class="display">
+            <form action="{% url 'search' %}" method="get">
+                <input type="text" name="q">
+                <button type="submit">Search</button>
+            </form>
+        </div>
+        {% block content %} {% endblock %}
     </div>
     <footer>
         

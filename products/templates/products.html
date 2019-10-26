@@ -10,9 +10,7 @@
         </div>
         <div class="card-content">
           <span class="card-title activator grey-text text-darken-4">{{ product.name }}<i class="material-icons right">more_vert</i></span>
-        </div>
-        <div class="card-reveal">
-          <form method="POST" action="{% url 'add_to_cart' product.id %}">
+            <form method="POST" action="{% url 'add_to_cart' product.id %}">
            {% csrf_token %}
            <div class="input-group">
                <input name="quantity" type="number" min="1" max="999" class="form-control" placeholder="Quantity: ">
@@ -21,6 +19,10 @@
                </span>
            </div>
            </form>
+        </div>
+        <div class="card-reveal">
+          <span class="card-title activator grey-text text-darken-4">{{ product.description }}<i class="material-icons right">more_vert</i></span>
+            
         </div>
      </div>
 

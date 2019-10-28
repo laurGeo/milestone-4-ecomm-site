@@ -139,6 +139,9 @@ STATICFILES_DIRS = (
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
+MEDIAFILES_LOCATION = 'media'
+DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
+
 MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
 
 STRIPE_PUBLISHABLE = os.getenv('STRIPE_PUBLISHABLE')

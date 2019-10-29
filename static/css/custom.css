@@ -64,6 +64,6 @@ caption p {
     min-height: 40px;
 }
 .card-image{
-    height: 400px; /* Your height here */
+    height: 300px; /* Your height here */
     overflow: hidden;
 }

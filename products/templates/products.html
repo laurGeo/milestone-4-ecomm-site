@@ -10,7 +10,19 @@
             <div class="card-stacked">
 
                 <span class="card-title grey-text text-darken-4">{{ product.name }}<i class="material-icons right">more_vert</i></span>
-                <p>${{product.price}} </p> <p>Year: 1945</p> <p>Significant Events: Event1, Event 2</p>
+                <p>${{product.price}} </p> <p>Year: {{product.year}}</p> <p>Significant Events: 
+                    {% if product.event1 != null%}    
+                        {{product.event1}}
+                    {% endif %}
+                    
+                    {% if product.event12 != null%}
+                        {{ product.event2 }}
+                    {% endif %}
+                    
+                    {% if product.event3 != null%}
+                        {{product.event3}}
+                    {% endif %}
+                </p>
                 <p>{{product.description}}</p>
                 <p>Click <a href="{% url 'view_specific_product' product.id %}">here</a> to view the full thing</p>
                 <div class="card-action">
@@ -19,7 +31,9 @@
                 </div>
             </div>
             <div class="card-reveal">
-
+<div class="card-image col s3 m3">
+                <img class="responsive-img activator" src={{MEDIA_URL}}{{ product.image}}>
+            </div>
                 <div class="card-content">
                     <span class="card-title activator grey-text text-darken-4">{{ product.name }}<i class="material-icons right">more_vert</i></span>
                     <form method="POST" action="{% url 'add_to_cart' product.id %}">

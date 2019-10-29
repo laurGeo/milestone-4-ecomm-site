@@ -63,3 +63,7 @@ caption p {
 .product-description {
     min-height: 40px;
 }
+.card-image{
+    height: 400px; /* Your height here */
+    overflow: hidden;
+}

@@ -9,10 +9,13 @@
             </div>
             <div class="card-stacked">
 
-                <span class="card-title activator grey-text text-darken-4">{{ product.description }}<i class="material-icons right">more_vert</i></span>
+                <span class="card-title grey-text text-darken-4">{{ product.name }}<i class="material-icons right">more_vert</i></span>
+                <p>${{product.price}} </p> <p>Year: 1945</p> <p>Significant Events: Event1, Event 2</p>
+                <p>{{product.description}}</p>
                 <p>Click <a href="{% url 'view_specific_product' product.id %}">here</a> to view the full thing</p>
                 <div class="card-action">
-                    <a href="#">This is a link</a>
+                    <i class="fa fa-euro-sign"></i></a>
+                    <a href="#"><i class="activator fa fa-angle-double-up fa-2x"></i> Quick Purchase</a>
                 </div>
             </div>
             <div class="card-reveal">
@@ -23,10 +26,8 @@
                         {% csrf_token %}
                         <div class="input-group">
                             <span class="card-title">
-               <input name="quantity" type="number" min="1" max="999" class="form-control" placeholder="Quantity: ">
-               <span class="input-group-btn">
-                   <button class="btn btn-success" type="submit">Add</button>
-               </span>
+                                <p>Buy now for ${{product.price}} </p> <button class="btn btn-success" type="submit">Add</button>
+                               
                             </span>
                         </div>
                     </form>

@@ -2,9 +2,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+    <script type="text/javascript" src="{% static 'js/stripe.js' %}"></script>
     <link rel="stylesheet" href="{% static 'css/custom.css' %}">
-     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
@@ -52,37 +54,7 @@
     <footer>
         
     </footer>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
-    <script type="text/javascript">
-    $(document).ready(function(){
-    $('.modal').modal();
-    $('.control-label').dropdown();
-    
-    function sendItem(val) {
-        return val;
-    }
-    $(function () {
-            $('input.autocomplete').autocomplete({
-                data: {
-                    "vegetarian": null,
-                    "coeliac": null,
-                    "vegan": null,
-                    "lactose-free":null
-                },
-                onAutocomplete: function(txt) {
-                   var query = "/"+txt;
-                   window.location.pathname="/search_recipe"+query
-                    //window.location += query;
-                  console.log(window.location)
-                  sendItem(txt);
-                },
-                limit: 20, // The max amount of results that can be shown at once. Default: Infinity.
-            });
 
-    });
-
-  });
     </script>
 </body>
 </html>

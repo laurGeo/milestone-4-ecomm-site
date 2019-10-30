@@ -18,7 +18,7 @@ def checkout(request):
     if request.method=="POST":
         order_form = OrderForm(request.POST)
         payment_form = MakePaymentForm(request.POST)
-        
+        print(payment_form);
         if order_form.is_valid() and payment_form.is_valid():
             order = order_form.save(commit=False)
             order.date = timezone.now()

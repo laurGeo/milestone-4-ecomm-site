@@ -7,7 +7,9 @@
             expYear: $("#id_expiry_year").val(),
             cvc: $("#id_cvv").val()
         };
-        
+        if (typeof Stripe === "undefined") {
+            alert("Unexpected Error");
+        }     
     Stripe.createToken(card, function(status, response) {
         if (status === 200) {
             $("#credit-card-errors").hide();

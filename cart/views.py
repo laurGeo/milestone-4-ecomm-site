@@ -5,6 +5,10 @@ from django.shortcuts import render, redirect, reverse
 def view_cart(request):
     return render(request, "cart.html")
     
+def make_bid(request, id):
+    """Making bid"""
+    return redirect(reverse('index'))
+    
 def add_to_cart(request, id):
     """Add specific item to cart"""
    

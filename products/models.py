@@ -9,6 +9,7 @@ class Product(models.Model):
     event3 = models.CharField(max_length=254, default='')
     year = models.IntegerField(default=1)
     price = models.DecimalField(max_digits=6, decimal_places=2)
+    bidding_price = models.DecimalField(max_digits=6, decimal_places=2, default=0)
     image = models.ImageField(upload_to='images')
 
     def __str__(self):

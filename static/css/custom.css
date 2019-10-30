@@ -67,3 +67,6 @@ caption p {
     height: 300px; /* Your height here */
     overflow: hidden;
 }
+#front-page{
+     background-image: url("../img/books.jpg");
+}

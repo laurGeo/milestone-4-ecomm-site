@@ -20,3 +20,6 @@ def all_products(request):
 def view_specific_product(request, id):
     product = get_object_or_404(Product, pk=id)
     return render(request, "product.html", {"product":product})
+    
+def index(request):
+    return render(request, "index.html")

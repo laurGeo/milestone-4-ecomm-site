@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load bootstrap_tags %}
 {% block content %}
 
  <div class="container">
@@ -20,14 +21,23 @@
         <div class="card-action">
           <h4>See what others have said..</h4>
         
-          <form method="post" action="{% url 'create_comment' product.id %}" class="accountform">
-            <fieldset class="form-group">
-                <legend>Create a new account</legend>
-                <p>Already got an account? <a href="{% url 'login' %}">Sign In</a></p>
-                {% csrf_token %}
-                {{  comment_form|as_bootstrap }}
-                <button type="submit" class="btn btn-primary">Create account</button>
-            </fieldset>
+          <form role="form" method="post" id="payment-form" action="{% url 'create_comment' product.id %}">
+            <div class="">
+              {{product.id}}
+              {% if form != null %}
+                {{ form|as_bootstrap }}
+                
+              {% endif %}
+              
+              {% for comment in comments %}
+                <p>{{ comment.username }} </p>
+              {% endfor %}
+            </div>
+
+            {% csrf_token %}
+            <div class="form-group col-md-12">
+                <input class="btn btn-primary" id="submit_payment_btn" name="commit" type="submit" value="View Comments">
+            </div>
           </form>
 
         </div>

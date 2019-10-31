@@ -3,12 +3,20 @@ from django.utils import timezone
 from .models import Comment
 from .forms import CommentForm
 
-def create_comment(request, pk=None):
+def create_comment(request, id):
 
-    post = get_object_or_404(Comment, pk=pk) if pk else None
+    comment = get_object_or_404(Comment, pk=id) if id else None
     if request.method == "POST":
-        form = CommentForm(request.POST, request.FILES, instance=post)
+        form = CommentForm(request.POST, request.FILES, instance=comment)
         if form.is_valid():
+            print(form)
             comment = form.save()
-
-    return render(request, 'product.html', {'form': comment_form})
+            return redirect(comment_detail, comment.id)
+    else:
+        form = CommentForm(instance=comment)
+    return render(request, 'product.html', {'form': form})
+    
+def comment_detail(request, id):
+    comments = Comment.objects.all()
+    
+    return render(request, "product.html", {'comments': comments})

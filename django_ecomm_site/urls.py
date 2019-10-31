@@ -17,6 +17,7 @@ from django.conf.urls import url, include
 from django.contrib import admin
 from accounts import urls as urls_accounts
 from products import urls as urls_products
+from comments import urls as urls_comments
 from cart import urls as urls_cart
 from checkout import urls as urls_checkout
 from search import urls as urls_search
@@ -34,4 +35,5 @@ urlpatterns = [
     url(r'^media/(?P<path>.*)$', static.serve, {'document_root': MEDIA_ROOT}),
     url(r'^search/', include(urls_search)),
     url(r'^checkout/', include(urls_checkout)),
+    url(r'^comments/', include(urls_comments)),
 ]

@@ -1,6 +1,8 @@
 from django.shortcuts import render, get_object_or_404
 from django.core.paginator import Paginator
 from .models import Product
+from .models import Comment
+from .forms import CommentForm
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 # Create your views here.
@@ -19,7 +21,8 @@ def all_products(request):
     
 def view_specific_product(request, id):
     product = get_object_or_404(Product, pk=id)
-    return render(request, "product.html", {"product":product})
+    
+    return render(request, 'product.html', {"product":product})
     
 def index(request):
     return render(request, "index.html")

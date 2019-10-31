@@ -48,12 +48,6 @@
                 <button type="submit">Search</button>
             </form>
         </div>
-        <div class="display">
-            <form action="{% url 'filter' %}" method="get">
-                <input type="text" name="q">
-                <button type="submit">Search</button>
-            </form>
-        </div>
         {% block content %} {% endblock %}
     </div>
     <footer>

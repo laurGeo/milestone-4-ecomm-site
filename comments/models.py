@@ -1,7 +1,7 @@
 from django.db import models
 from django.utils import timezone
 
-
+"""Comments for individual products on detailed view"""
 class Comment(models.Model):
    
     username = models.CharField(max_length=200)

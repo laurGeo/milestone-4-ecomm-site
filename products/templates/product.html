@@ -59,13 +59,13 @@
               <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
             </li>
           </ul>
-                    <form role="form" method="post" id="payment-form" action="{% url 'create_comment' product.id %}">
+          <form role="form" method="post" id="payment-form" action="{% url 'create_comment' product.id %}">
             <div class="">
               {{product.id}} {% if form != null %} {{ form|as_bootstrap }} {% endif %} {% for comment in comments %}
               <p>{{ comment.username }} </p>
               {% endfor %}
             </div>
-
+            <!-- Token required for submitting forms-->
             {% csrf_token %}
             <div class="form-group col-md-12">
               <input class="btn btn-primary" id="submit_payment_btn" name="commit" type="submit" value="View Comments">

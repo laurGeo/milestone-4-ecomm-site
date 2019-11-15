@@ -6,14 +6,16 @@
             </form>
         </div>
 <div class="row">
+    <!-- List of all products registered in db -->
     {% for product in products %}
     <div class="col s12 m12">
         <div class="card horizontal">
+            
             <div class="card-image col s3 m3">
                 <img class="responsive-img activator" src={{MEDIA_URL}}{{ product.image}}>
             </div>
+            
             <div class="card-stacked">
-
                 <span class="card-title grey-text text-darken-4">{{ product.name }}</span>
                 <p>${{product.price}} </p> <p>Year: {{product.year}}</p> <p>Significant Events: 
                     {% if product.event1 != null%}    

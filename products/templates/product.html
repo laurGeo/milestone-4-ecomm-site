@@ -4,20 +4,28 @@
   <div class="row">
     <div class="col s12 m12 centre-align">
       <div class="card" >
-        <img class="card-img-top" src="{{MEDIA_URL}}{{ product.image}}" alt="Card image cap">
+        <img class="card-img-top" style="height: 500px;" src="{{MEDIA_URL}}{{ product.image}}" alt="Card image cap">
         <div class="card-body">
-          <h5 class="card-title">{{ product.name }}</h5>
+          <h5 class="card-title">{{ product.name }}</h5><br><br>
           <p class="card-text">
-            <b>Price: </b>${{product.price}}
-            <b>Year: </b> {{product.year}}
-            <b>Significant Events: </b> {% if product.event1 != null %} {{product.event1}} {% endif %} {% if product.event12 != null %} {{ product.event2 }} {% endif %} {% if product.event3 != null %} {{product.event3}} {% endif %}
-            <b>Description:</b>{{product.description}}
+            <b>Price: </b>${{product.price}} <br><br>
+            <b>Year: </b> {{product.year}}<br><br>
+            <b>Significant Events: </b> {% if product.event1 != null %} {{product.event1}} {% endif %} {% if product.event2 != null %} {{ product.event2 }} {% endif %} {% if product.event3 != null %} {{product.event3}} {% endif %}
+            <br><br><b>Description:</b>{{product.description}}
+            <form method="POST" action="{% url 'add_to_cart' product.id %}">
+                        {% csrf_token %}
+                        <div class="input-group">
+                            <span class="card-title">
+                                <p>Buy now for ${{product.price}} </p> <button class="btn btn-success" type="submit">Add</button>
+                               
+                            </span>
+                        </div>
+                    </form>
           </p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
         </div>
         
       </div>
-              <div class="card-action">
+              <div class="card">
           <h4>See what others have said..</h4>
 
 

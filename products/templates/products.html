@@ -1,7 +1,8 @@
 {% extends "base.html" %} {% block content %}
 <div class="display">
-            <form action="{% url 'search' %}" method="get">
-                <input type="text" name="q">
+
+            <form action="{% url 'search' %}" method="get"class="active-purple-3 active-purple-4 mb-4">
+                <input class="form-control" type="text" name="q">
                 <button type="submit">Search</button>
             </form>
         </div>

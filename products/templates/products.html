@@ -9,53 +9,6 @@
     <!-- List of all products registered in db -->
     {% for product in products %}
     <div class="col-md-4">
-        <!--<div class="card horizontal">-->
-            
-        <!--    <div class="card-image col s3 m3">-->
-        <!--        <img class="responsive-img activator" src={{MEDIA_URL}}{{ product.image}}>-->
-        <!--    </div>-->
-            
-        <!--    <div class="card-stacked">-->
-        <!--        <span class="card-title grey-text text-darken-4">{{ product.name }}</span>-->
-        <!--        <p>${{product.price}} </p> <p>Year: {{product.year}}</p> <p>Significant Events: -->
-        <!--            {% if product.event1 != null%}    -->
-        <!--                {{product.event1}}-->
-        <!--            {% endif %}-->
-                    
-        <!--            {% if product.event12 != null%}-->
-        <!--                {{ product.event2 }}-->
-        <!--            {% endif %}-->
-                    
-        <!--            {% if product.event3 != null%}-->
-        <!--                {{product.event3}}-->
-        <!--            {% endif %}-->
-        <!--        </p>-->
-        <!--        <p>{{product.description}}</p>-->
-        <!--        <p>Click <a href="{% url 'view_specific_product' product.id %}">here</a> to view the full thing</p>-->
-        <!--        <div class="card-action">-->
-        <!--            <i class="fa fa-euro-sign"></i></a>-->
-        <!--            <a href="#"><i class="activator fa fa-angle-double-up fa-2x"></i> Quick Purchase</a>-->
-        <!--        </div>-->
-        <!--    </div>-->
-        <!--    <div class="card-reveal">-->
-        <!--        <div class="card-image col s3 m3">-->
-        <!--            <img class="responsive-img activator" src={{MEDIA_URL}}{{ product.image}}>-->
-        <!--        </div>-->
-        <!--        <div class="card-content">-->
-        <!--            <span class="card-title activator grey-text text-darken-4">{{ product.name }}</span>-->
-        <!--            <form method="POST" action="{% url 'add_to_cart' product.id %}">-->
-        <!--                {% csrf_token %}-->
-        <!--                <div class="input-group">-->
-        <!--                    <span class="card-title">-->
-        <!--                        <p>Buy now for ${{product.price}} </p> <button class="btn btn-success" type="submit">Add</button>-->
-                               
-        <!--                    </span>-->
-        <!--                </div>-->
-        <!--            </form>-->
-        <!--        </div>-->
-
-        <!--    </div>-->
-        <!--</div>-->
             <div class="card">
               <img class="card-img-top" src={{MEDIA_URL}}{{ product.image}} alt="Card image cap">
               <div class="card-body">

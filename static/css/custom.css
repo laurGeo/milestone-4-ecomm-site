@@ -63,10 +63,12 @@ caption p {
 .product-description {
     min-height: 40px;
 }
-.card-image{
-    height: 300px; /* Your height here */
-    overflow: hidden;
-}
+
 #front-page{
      background-image: url("../img/books.jpg");
+}
+
+.card{
+    height:100px;
+    color: green;
 }

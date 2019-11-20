@@ -9,9 +9,9 @@
         <div class="row">
             <!-- List of all products registered in db -->
             {% for product in products %}
-            <div class="col-md-12 col-sm-12">
+            <div class="col-md-12 col-sm-12 col-lg-4">
                 <div class="card">
-                  <img class="card-img-top" style="height: 200px" src={{MEDIA_URL}}{{ product.image}} alt="Card image cap">
+                  <img class="card-img-top" style="height: 200px" src={{MEDIA_URL}}{{product.image}} alt="Card image cap">
                   <div class="card-body">
                     <h5 class="card-title">{{ product.name }}</h5>
                     <p class="card-text">${{product.price}}</p>

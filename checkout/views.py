@@ -11,6 +11,7 @@ import stripe
 # Create your views here.
 
 stripe.api_key = settings.STRIPE_SECRET
+stripe.publishable = settings.STRIPE_PUBLISHABLE
 """ Only for authenticated users"""
 @login_required()
 def checkout(request):
@@ -39,7 +40,7 @@ def checkout(request):
                     amount = int(total * 100),
                     currency = "EUR",
                     description = request.user.email,
-                    card = payment_form.cleaned_data['stripe_id'],
+                     card = "tok_visa",,
                 )
             except stripe.error.CardError:
                 messages.error(request, "Your card was declined!")
@@ -51,6 +52,7 @@ def checkout(request):
             else:
                 messages.error(request, "Unable to take payment")
         else:
+            print(payment_form.errors)
             messages.error(request, "We were unable to take a payment with that card!")
     else:
         payment_form = MakePaymentForm()

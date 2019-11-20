@@ -25,53 +25,53 @@
         </div>
         
       </div>
-              <div class="card">
-          <h4>See what others have said..</h4>
+        <!--      <div class="card">-->
+        <!--  <h4>See what others have said..</h4>-->
 
 
-          <ul class="collection">
-            <li class="collection-item avatar">
-              <i class="material-icons circle pink">face</i>
-              <span class="title">Mary O'Sullivan</span>
-              <p>Excellent!
-              </p>
-              <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
-            </li>
-            <li class="collection-item avatar">
-              <i class="material-icons circle">face</i>
-              <span class="title">Joe Bloggs</span>
-              <p>I did not like this so much.
-              </p>
-              <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
-            </li>
-            <li class="collection-item avatar">
-              <i class="material-icons circle green">face</i>
-              <span class="title">Michael Smith</span>
-              <p>This product was great, i loved it!!!<br> Second Line
-              </p>
-              <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
-            </li>
-            <li class="collection-item avatar">
-              <i class="material-icons circle red">face</i>
-              <span class="title">Sarah Dunne</span>
-              <p>5 stars
-              </p>
-              <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
-            </li>
-          </ul>
-          <form role="form" method="post" id="payment-form" action="{% url 'create_comment' product.id %}">
-            <div class="">
-              {{product.id}} {% if form != null %} {{ form|as_bootstrap }} {% endif %} {% for comment in comments %}
-              <p>{{ comment.username }} </p>
-              {% endfor %}
-            </div>
+        <!--  <ul class="collection">-->
+        <!--    <li class="collection-item avatar">-->
+        <!--      <i class="material-icons circle pink">face</i>-->
+        <!--      <span class="title">Mary O'Sullivan</span>-->
+        <!--      <p>Excellent!-->
+        <!--      </p>-->
+        <!--      <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>-->
+        <!--    </li>-->
+        <!--    <li class="collection-item avatar">-->
+        <!--      <i class="material-icons circle">face</i>-->
+        <!--      <span class="title">Joe Bloggs</span>-->
+        <!--      <p>I did not like this so much.-->
+        <!--      </p>-->
+        <!--      <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>-->
+        <!--    </li>-->
+        <!--    <li class="collection-item avatar">-->
+        <!--      <i class="material-icons circle green">face</i>-->
+        <!--      <span class="title">Michael Smith</span>-->
+        <!--      <p>This product was great, i loved it!!!<br> Second Line-->
+        <!--      </p>-->
+        <!--      <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>-->
+        <!--    </li>-->
+        <!--    <li class="collection-item avatar">-->
+        <!--      <i class="material-icons circle red">face</i>-->
+        <!--      <span class="title">Sarah Dunne</span>-->
+        <!--      <p>5 stars-->
+        <!--      </p>-->
+        <!--      <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>-->
+        <!--    </li>-->
+        <!--  </ul>-->
+        <!--  <form role="form" method="post" id="payment-form" action="{% url 'create_comment' product.id %}">-->
+        <!--    <div class="">-->
+        <!--      {{product.id}} {% if form != null %} {{ form|as_bootstrap }} {% endif %} {% for comment in comments %}-->
+        <!--      <p>{{ comment.username }} </p>-->
+        <!--      {% endfor %}-->
+        <!--    </div>-->
              <!--Token required for submitting forms-->
-            {% csrf_token %}
-            <div class="form-group col-md-12">
-              <input class="btn btn-primary" id="submit_payment_btn" name="commit" type="submit" value="View Comments">
-            </div>
-          </form>
+        <!--    {% csrf_token %}-->
+        <!--    <div class="form-group col-md-12">-->
+        <!--      <input class="btn btn-primary" id="submit_payment_btn" name="commit" type="submit" value="View Comments">-->
+        <!--    </div>-->
+        <!--  </form>-->
 
-        </div>
+        <!--</div>-->
      
 {% endblock %}

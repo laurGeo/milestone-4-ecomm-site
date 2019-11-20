@@ -10,55 +10,67 @@
             <p>You are logged in with this email: {{user.email}}</p>
             <h3>Orders</h3>
             <p>This is a list of all the orders you have made in the past:</p>
-                <div class="row">
-                    <div class="col s3 m3">
-                    <div class="card horizontal">
-                      <div class="card-image">
-                        <img src="https://lorempixel.com/100/190/nature/3">
-                      </div>
-                      <div class="card-stacked">
-                        <div class="card-content">
-                          <p>This is the first order</p>
-                        </div>
-                        <div class="card-action">
-                          <a href="#">This is a link</a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col s3 m3">
-                    <div class="card horizontal">
-                      <div class="card-image">
-                        <img src="https://lorempixel.com/100/190/nature/2">
-                      </div>
-                      <div class="card-stacked">
-                        <div class="card-content">
-                          <p>This is the second order</p>
-                        </div>
-                        <div class="card-action">
-                          <a href="#">This is a link</a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col s3 m3">
-                    <div class="card horizontal">
-                      <div class="card-image">
-                        <img src="https://lorempixel.com/100/190/nature/1">
-                      </div>
-                      <div class="card-stacked">
-                        <div class="card-content">
-                          <p>This is the third order</p>
-                        </div>
-                        <div class="card-action">
-                          <a href="#">This is a link</a>
-                        </div>
-                      </div>
-                    </div>
+                <!--<div class="row">-->
+                <!--    <div class="col s3 m3">-->
+                <!--    <div class="card horizontal">-->
+                <!--      <div class="card-image">-->
+                <!--        <img src="https://lorempixel.com/100/190/nature/3">-->
+                <!--      </div>-->
+                <!--      <div class="card-stacked">-->
+                <!--        <div class="card-content">-->
+                <!--          <p>This is the first order</p>-->
+                <!--        </div>-->
+                <!--        <div class="card-action">-->
+                <!--          <a href="#">This is a link</a>-->
+                <!--        </div>-->
+                <!--      </div>-->
+                <!--    </div>-->
+                <!--  </div>-->
+                <!--  <div class="col s3 m3">-->
+                <!--    <div class="card horizontal">-->
+                <!--      <div class="card-image">-->
+                <!--        <img src="https://lorempixel.com/100/190/nature/2">-->
+                <!--      </div>-->
+                <!--      <div class="card-stacked">-->
+                <!--        <div class="card-content">-->
+                <!--          <p>This is the second order</p>-->
+                <!--        </div>-->
+                <!--        <div class="card-action">-->
+                <!--          <a href="#">This is a link</a>-->
+                <!--        </div>-->
+                <!--      </div>-->
+                <!--    </div>-->
+                <!--  </div>-->
+                <!--  <div class="col s3 m3">-->
+                <!--    <div class="card horizontal">-->
+                <!--      <div class="card-image">-->
+                <!--        <img src="https://lorempixel.com/100/190/nature/1">-->
+                <!--      </div>-->
+                <!--      <div class="card-stacked">-->
+                <!--        <div class="card-content">-->
+                <!--          <p>This is the third order</p>-->
+                <!--        </div>-->
+                <!--        <div class="card-action">-->
+                <!--          <a href="#">This is a link</a>-->
+                <!--        </div>-->
+                <!--      </div>-->
+                <!--    </div>-->
+                <!--  </div>-->
+                <!--</div>-->
+                
+            {% for order in orders %}
+            <div class="col-md-12 col-sm-12 col-lg-4">
+                <div class="card">
+                  <img class="card-img-top" style="height: 200px" alt="Card image cap">
+                  <div class="card-body">
+                    <h5 class="card-title">{{ order.name}}</h5>
+                    <p class="card-text"></p>
+                    <a href=""class="btn btn-primary">View more</a>
                   </div>
                 </div>
-                
-            
+            </div>
+
+    {% endfor %}
             <h3>In process</h3>
             <p>Here are your current orders being processed at the moment.</p>
             <div class="row">

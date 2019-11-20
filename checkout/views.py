@@ -3,6 +3,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from .forms import MakePaymentForm, OrderForm
 from .models import OrderLineItem
+from .models import Order
 from django.conf import settings
 from django.utils import timezone
 from products.models import Product
@@ -15,14 +16,15 @@ stripe.publishable = settings.STRIPE_PUBLISHABLE
 """ Only for authenticated users"""
 @login_required()
 def checkout(request):
+    print(request.user)
     if request.method=="POST":
         order_form = OrderForm(request.POST)
         payment_form =  MakePaymentForm(request.POST)
-        print(payment_form);
         if order_form.is_valid() and payment_form.is_valid():
             order = order_form.save(commit=False)
             order.date = timezone.now()
             order.save()
+            
             cart = request.session.get('cart', {})
             total = 0
             for id, quantity in cart.items():
@@ -48,7 +50,9 @@ def checkout(request):
             if customer.paid:
                 messages.error(request, "You have successfully paid")
                 request.session['cart'] = {}
-                return redirect(reverse('profile'))
+                orders = Order.objects.all()
+                # print(orders)
+                return render(request, "profile.html", {'orders': orders})
             else:
                 messages.error(request, "Unable to take payment")
         else:

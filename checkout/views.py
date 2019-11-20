@@ -8,19 +8,17 @@ from django.utils import timezone
 from products.models import Product
 import stripe
 
-
 # Create your views here.
 
 stripe.api_key = settings.STRIPE_SECRET
 """ Only for authenticated users"""
 @login_required()
 def checkout(request):
-    print(request)
+
     if request.method=="POST":
         order_form = OrderForm(request.POST)
         payment_form = MakePaymentForm(request.POST)
-        print(order_form)
-        print(payment_form)
+        
         if order_form.is_valid() and payment_form.is_valid():
             order = order_form.save(commit=False)
             order.date = timezone.now()
@@ -55,7 +53,6 @@ def checkout(request):
             else:
                 messages.error(request, "Unable to take payment")
         else:
-            print(payment_form.errors)
             messages.error(request, "We were unable to take a payment with that card!")
     else:
         payment_form = MakePaymentForm()

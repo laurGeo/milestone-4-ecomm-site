@@ -20,36 +20,18 @@
                                
                             </span>
                         </div>
-                    </form>
+              </form>
           </p>
         </div>
         
       </div>
-      
-      <div class="row">
-        <h1>List of comments</h1>
-             List of all products registered in db 
-            {% for comment in comments %}
-            {% if comment.prod_id == id %}
-              <div class="col-md-12 col-sm-12 col-lg-4">
-                  <div class="card">
-                    <div class="card-body">
-                      <h5 class="card-title">NAME: {{ comment.user }}</h5>
-                      <p class="card-text">CONTENT: {{comment.content}}</p>
-                       <p class="card-text">RATE: {{comment.rate}}</p>
-                       <p class="card-text">ID {{comment.prod_id}}</p>
-                    </div>
-                  </div>
-              </div>
-            {% endif %}
-    {% endfor %}
-
-</div>
-      
+      </div>
+      </div>
+     
       <form role="form" method="post" id="comment-form" action="{% url 'create_comment' product.id %}">
-    <legend>Make a Comment</legend>
+    <legend>Used this product? Write a comment..</legend>
 
-    <div class="form-group col-md-6">
+    <div class="form-group col-md-12">
         {{ comment_form|as_bootstrap }}
     </div>
     
@@ -58,5 +40,28 @@
         <input class="btn btn-primary" id="submit_payment_btn" name="commit" type="submit" value="Submit Comment">
     </div>
     </form>
-     
+    
+     <div class="row">
+        <div class="col-md-12 col-sm-12">
+          
+          <h1>List of comments</h1>
+             See what other people have said..
+            {% for comment in comments %}
+            {% if comment.prod_id == id %}
+                  <div class="card">
+                    <h5 class="card-header">Name: {{ comment.user }} ({{comment.username}})</h5>
+                    <div class="card-body">
+                      <h5 class="card-title"></h5>
+                      <p class="card-text">{{comment.content}}</p>
+                       <p class="card-text">Rating: {{comment.rate}}</p><br>
+                       <p class="card-text"style="float:right">{{comment.created_date}}</p>
+                    </div>
+              </div>
+            {% endif %}
+    {% endfor %}
+        </div>
+        
+
+</div>
+      
 {% endblock %}

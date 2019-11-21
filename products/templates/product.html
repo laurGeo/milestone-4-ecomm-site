@@ -6,7 +6,7 @@
       <div class="card" >
         <img class="card-img-top" style="height: 500px;" src="{{MEDIA_URL}}{{ product.image}}" alt="Card image cap">
         <div class="card-body">
-          <h5 class="card-title">{{ product.name }}</h5><br><br>
+          <h5 class="card-title">{{ product.name }} {{comments.count }}</h5><br><br>
           <p class="card-text">
             <b>Price: </b>${{product.price}} <br><br>
             <b>Year: </b> {{product.year}}<br><br>
@@ -25,6 +25,25 @@
         </div>
         
       </div>
+      
+<!--      <div class="row">-->
+<!--        <h1>List of comments</h1>-->
+            <!-- List of all products registered in db -->
+<!--            {% for comment in comments %}-->
+<!--            <div class="col-md-12 col-sm-12 col-lg-4">-->
+<!--                <div class="card">-->
+<!--                  <div class="card-body">-->
+<!--                    <h5 class="card-title">{{ comment.username }}</h5>-->
+<!--                    <p class="card-text">${{comment.content}}</p>-->
+                    
+<!--                  </div>-->
+<!--                </div>-->
+<!--            </div>-->
+
+<!--    {% endfor %}-->
+
+<!--</div>-->
+      
       <form role="form" method="post" id="comment-form" action="{% url 'create_comment' product.id %}">
     <legend>Make a Comment</legend>
 

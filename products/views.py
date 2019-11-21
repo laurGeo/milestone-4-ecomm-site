@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from django.core.paginator import Paginator
 from .models import Product
-from .models import Comment
+from comments.models import Comment
 from .forms import CommentForm
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
@@ -21,9 +21,10 @@ def all_products(request):
     
 def view_specific_product(request, id):
     comment_form = CommentForm()
+    comments = Comment.objects.all()
     product = get_object_or_404(Product, pk=id)
     
-    return render(request, 'product.html', {"product":product, "comment_form": comment_form})
+    return render(request, 'product.html', {"product":product, "comments":comments,"comment_form": comment_form})
     
 def index(request):
     return render(request, "index.html")

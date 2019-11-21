@@ -24,4 +24,4 @@ def create_comment(request, id):
 def comment_detail(request, id):
     comments = Comment.objects.all()
     
-    return render(request, "product.html", {'comments': comments})
+    return render(request, "product.html", {"comments": comments})

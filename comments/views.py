@@ -12,7 +12,9 @@ def create_comment(request, id):
         comment_form = CommentForm(request.POST)
         print(comment_form.is_valid())
         if comment_form.is_valid():
-            comment_form.save()
+            comment = comment_form.save(commit=False)
+            comment.user = request.user
+            comment.save()
             return redirect('view_specific_product', id=id)
         else:
             comment_form = CommentForm()

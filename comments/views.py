@@ -4,20 +4,19 @@ from .models import Comment
 from .forms import CommentForm
 
 """Allows user to write comment"""
-def create_comment(request, id):
-
-    comment = get_object_or_404(Comment, pk=id) if id else None
-    
+def create_comment(request, pk=id):
+# //TODO: https://tutorial.djangogirls.org/en/django_forms/
     if request.method == "POST":
-        form = CommentForm(request.POST, request.FILES, instance=comment)
-        if form.is_valid():
-            print(form)
-            comment = form.save()
-            return redirect(comment_detail, comment.id)
+        comment_form = CommentForm(request.POST)
+        print(comment_form.is_valid())
+        if comment_form.is_valid():
+            comment_form.save()
+        return render(request, 'index.html')
     else:
-        form = CommentForm(instance=comment)
-        
-    return render(request, 'product.html', {'form': form})
+        comment_form = CommentForm()
+    
+    args = {'comment_form': comment_form}
+    return render(request, 'product.html', args)
     
 """Returning details from the comment"""
 def comment_detail(request, id):

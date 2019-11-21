@@ -9,3 +9,6 @@ class Comment(models.Model):
     created_date = models.DateTimeField(auto_now_add=True)
     image = models.ImageField(upload_to="img", blank=True, null=True)
     rate = models.CharField(max_length=10)
+    
+    def __unicode__(self):
+        return self.task

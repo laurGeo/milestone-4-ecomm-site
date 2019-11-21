@@ -20,9 +20,10 @@ def all_products(request):
     return render(request, "products.html", {"products": products})
     
 def view_specific_product(request, id):
+    comment_form = CommentForm()
     product = get_object_or_404(Product, pk=id)
     
-    return render(request, 'product.html', {"product":product})
+    return render(request, 'product.html', {"product":product, "comment_form": comment_form})
     
 def index(request):
     return render(request, "index.html")

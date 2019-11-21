@@ -1,6 +1,4 @@
 {% extends "base.html" %} {% load bootstrap_tags %} {% block content %}
-
-<div class="container">
   <div class="row">
     <div class="col s12 m12 centre-align">
       <div class="card" >
@@ -48,20 +46,19 @@
              See what other people have said..
             {% for comment in comments %}
             {% if comment.prod_id == id %}
-                  <div class="card">
-                    <h5 class="card-header">Name: {{ comment.user }} ({{comment.username}})</h5>
-                    <div class="card-body">
-                      <h5 class="card-title"></h5>
-                      <p class="card-text">{{comment.content}}</p>
-                       <p class="card-text">Rating: {{comment.rate}}</p><br>
-                       <p class="card-text"style="float:right">{{comment.created_date}}</p>
-                    </div>
+              <div class="card">
+                <h5 class="card-header">Name: {{ comment.user }} ({{comment.username}})</h5>
+                <div class="card-body">
+                  <h5 class="card-title"></h5>
+                  <p class="card-text">{{comment.content}}</p>
+                   <p class="card-text">Rating: {{comment.rate}}</p><br>
+                   <p class="card-text"style="float:right">{{comment.created_date}}</p>
+                </div>
               </div>
             {% endif %}
     {% endfor %}
         </div>
-        
+      </div>  
 
-</div>
-      
+
 {% endblock %}

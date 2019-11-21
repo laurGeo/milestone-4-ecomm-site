@@ -5,10 +5,6 @@ p, h1, h2, h3, a{
 }
 body {
     font-family: Arial;
-    background-color: #FFFFCC;
-}
-.card{
-    background-color: lightyellow;
 }
 footer {
     margin-top: 40px;

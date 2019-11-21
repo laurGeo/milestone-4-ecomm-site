@@ -128,16 +128,20 @@ STRIPE_CANCEL_URL
 STRIPE_PUBLISHABLE	
 STRIPE_SECRET
 STRIPE_SUCCESS_URL	
-From the command line of your local IDE:
 
-Enter the heroku postres shell
-Migrate the database models
-Create your superuser account in your new database
-Instructions on how to do these steps can be found in the heroku devcenter documentation.
 
 In your heroku dashboard, in Deploy, choose whether you want to deploy after a Continuous Integration build has passed. I selected true as i have Travis CI running.
 
 Click View App
+
+For running this code locally:
+
+1. Go to the repository main page
+2. Select Clone with HTTPS
+3. Copy link
+4. Open git bash in desired directory
+5. type git clone and the URL from step 2
+6. Press Enter
 
 ## Credits ##
  

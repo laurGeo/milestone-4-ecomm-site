@@ -26,23 +26,23 @@
         
       </div>
       
-<!--      <div class="row">-->
-<!--        <h1>List of comments</h1>-->
-            <!-- List of all products registered in db -->
-<!--            {% for comment in comments %}-->
-<!--            <div class="col-md-12 col-sm-12 col-lg-4">-->
-<!--                <div class="card">-->
-<!--                  <div class="card-body">-->
-<!--                    <h5 class="card-title">{{ comment.username }}</h5>-->
-<!--                    <p class="card-text">${{comment.content}}</p>-->
+      <div class="row">
+        <h1>List of comments</h1>
+             List of all products registered in db 
+            {% for comment in comments %}
+            <div class="col-md-12 col-sm-12 col-lg-4">
+                <div class="card">
+                  <div class="card-body">
+                    <h5 class="card-title">{{ comment.username }}</h5>
+                    <p class="card-text">${{comment.content}}</p>
                     
-<!--                  </div>-->
-<!--                </div>-->
-<!--            </div>-->
+                  </div>
+                </div>
+            </div>
 
-<!--    {% endfor %}-->
+    {% endfor %}
 
-<!--</div>-->
+</div>
       
       <form role="form" method="post" id="comment-form" action="{% url 'create_comment' product.id %}">
     <legend>Make a Comment</legend>

@@ -1,5 +1,17 @@
 [![Build Status](https://travis-ci.org/laurGeo/milestone-4-ecomm-site.svg?branch=master)](https://travis-ci.org/laurGeo/milestone-4-ecomm-site)
 # Full Stack Frameworks Project with Django #
+
+- [Full Stack Frameworks Project with Django](#full-stack-frameworks-project-with-django)
+  * [OverView](#overview)
+  * [UX](#ux)
+  * [Features](#features)
+  * [Features Left to Implement](#features-left-to-implement)
+  * [Technologies Used](#technologies-used)
+  * [Testing](#testing)
+  * [Deployment](#deployment)
+  * [Credits](#credits)
+  
+## OverView ##
 My project is called hiSTOREy. It is an online store for historic artifacts. 
 The site owner can upload an image of their artifact for customers to see and to buy. Site owner will also provide details such as the price, the name, the short description and also some historic events that the product has lived through.
 
@@ -8,6 +20,8 @@ This is ideal for history enthusiasts, and also the general public.
 
 ## UX ##
 This website is not just for a history enthusiast, but for the general public who have an interest in history. Although it is aimed at those who have more knowledge about historic artifacts, the simple design and UI makes it accessible to anyone curious to look at it.
+
+The UI is very simple. The colours are light, and i chose to use the bootstrap 'error' yellow to use as the background for the footer and the header. These stick out compared to the pale background. All items are displayed using cards, which are easy on the eye. The font is a google font that is slightly different but also very legible.
 
 The general flow of the site is very simple. The user will visit the site, and whether or not they are logged in they can browse through the products. The products page is paginated so that not too many products show up at once.
 
@@ -24,27 +38,27 @@ As a user I want to
 Wireframes are in the wireframes directory
 
 ## Features ##
-Homepage - this page is the landing page for the user. It contains all the products on the site. This is paginated, so only top 5 products appear. 
+1. Homepage - this page is the landing page for the user. It contains all the products on the site. This is paginated, so only top 5 products appear. 
 
 The design is simple, with a row for each product. This contains the image and the description of the product. 
 When the user clicks the quick add icon, a slide up appears where the user can choose to add the item to cart.
 
-Cart - The user has a cart they can view. This contains all the items the user has added to cart. It also has the ability to modify the amount of objects they want.
+2. Cart - The user has a cart they can view. This contains all the items the user has added to cart. It also has the ability to modify the amount of objects they want.
 
-Checkout - This is where the user can put in their credit card details and make the purchase
+3. Checkout - This is where the user can put in their credit card details and make the purchase
 Account - This is where the user accounts are stored. The user can click on the ‘Profile’ button on the nav bar to view their profile. This contains information about the user such as the name and email address. In an ideal world this would contain all previous orders made by the users and the orders that the site are currently processing for the user. This would contain details such as the status of the process, and information such as the price and date of purchase.
  
- Products - The home page is a list of all the products available on the site. When a user clicks to See More details about a product, it goes on to a separate page where more details are available. The customer can add an item to the cart from this part. A user can also view all comments related to the product from here, as well as adding their own
+ 4. Products - The home page is a list of all the products available on the site. When a user clicks to See More details about a product, it goes on to a separate page where more details are available. The customer can add an item to the cart from this part. A user can also view all comments related to the product from here, as well as adding their own
  
- Search - From the homepage a user can search for products. This searches via the product name.
+ 5. Search - From the homepage a user can search for products. This searches via the product name.
  
- Pagination - The top 5 products are shown, and the user can skip on to the next set of pages if needs be. This jsut means there is not too much information on the screen at once.
+ 6. Pagination - The top 5 products are shown, and the user can skip on to the next set of pages if needs be. This jsut means there is not too much information on the screen at once.
  
- Comments - Users may comment on products. This is to help other users when purchasing. User must fill out a form of username, comment, rating. When a user visits a products specific page they can view comments on that particular producr, and can see who wrote them. They have the oppertunity to comment themselves also.
+ 7 Comments - Users may comment on products. This is to help other users when purchasing. User must fill out a form of username, comment, rating. When a user visits a products specific page they can view comments on that particular producr, and can see who wrote them. They have the oppertunity to comment themselves also.
  
- Orders - when a user makes an order it is saved in the backend. It is associated with that user based on who is logged in. So a user will have an order history which can be viewed from their Profile.
+ 8 Orders - when a user makes an order it is saved in the backend. It is associated with that user based on who is logged in. So a user will have an order history which can be viewed from their Profile.
   
- Profile - A user can see their information from the profile page. This has basic information such as the info the user used to sign up with like name and email. Users may also view their order history. This is a table that appears containing the dates of the orders, and who made the purchase as well as the full name on the credit card that made the purchase.
+ 9 Profile - A user can see their information from the profile page. This has basic information such as the info the user used to sign up with like name and email. Users may also view their order history. This is a table that appears containing the dates of the orders, and who made the purchase as well as the full name on the credit card that made the purchase.
  
 ## Features Left to Implement ##
 Allowing a user to bid on the products - the idea behind this is to add the functionality onto the ‘quick add’ menu on the products page. The user would have the option to purchase the product immediately for a high price or start bidding. 

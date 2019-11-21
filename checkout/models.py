@@ -13,6 +13,7 @@ class Order(models.Model):
     street_address2 = models.CharField(max_length=40, blank=False)
     county = models.CharField(max_length=40, blank=False)
     date = models.DateField()
+    user = models.ForeignKey(User,on_delete=models.CASCADE,null=True, blank=True)
     
 
     def __str__(self):

@@ -14,6 +14,7 @@ def create_comment(request, id):
         if comment_form.is_valid():
             comment = comment_form.save(commit=False)
             comment.user = request.user
+            comment.prod_id = id
             comment.save()
             return redirect('view_specific_product', id=id)
         else:

@@ -11,6 +11,7 @@ class Comment(models.Model):
     image = models.ImageField(upload_to="img", blank=True, null=True)
     rate = models.CharField(max_length=10)
     user = models.ForeignKey(User,on_delete=models.CASCADE,null=True, blank=True)
+    prod_id = models.CharField(max_length=10, null=True)
     
     def __unicode__(self):
         return self.task

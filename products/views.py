@@ -23,8 +23,7 @@ def view_specific_product(request, id):
     comment_form = CommentForm()
     comments = Comment.objects.all()
     product = get_object_or_404(Product, pk=id)
-    
-    return render(request, 'product.html', {"product":product, "comments":comments,"comment_form": comment_form})
+    return render(request, 'product.html', {"product":product, "id":id,"comments":comments,"comment_form": comment_form})
     
 def index(request):
     return render(request, "index.html")

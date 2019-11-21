@@ -1,10 +1,11 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.utils import timezone
+from django.core.urlresolvers import reverse
 from .models import Comment
 from .forms import CommentForm
 
 """Allows user to write comment"""
-def create_comment(request, pk=id):
+def create_comment(request, id):
 # //TODO: https://tutorial.djangogirls.org/en/django_forms/
     if request.method == "POST":
         comment_form = CommentForm(request.POST)
@@ -16,7 +17,7 @@ def create_comment(request, pk=id):
         comment_form = CommentForm()
     
     args = {'comment_form': comment_form}
-    return render(request, 'product.html', args)
+    return redirect(reverse('index'), args)
     
 """Returning details from the comment"""
 def comment_detail(request, id):

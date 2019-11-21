@@ -1,5 +1,6 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.utils import timezone
+from django.http import HttpResponseRedirect
 from django.core.urlresolvers import reverse
 from .models import Comment
 from .forms import CommentForm
@@ -12,12 +13,12 @@ def create_comment(request, id):
         print(comment_form.is_valid())
         if comment_form.is_valid():
             comment_form.save()
-        return render(request, 'index.html')
-    else:
-        comment_form = CommentForm()
-    
-    args = {'comment_form': comment_form}
-    return redirect(reverse('index'), args)
+            return redirect('view_specific_product', id=id)
+        else:
+            comment_form = CommentForm()
+        
+        args = {'comment_form': comment_form}
+        return redirect(reverse('index'), args)
     
 """Returning details from the comment"""
 def comment_detail(request, id):

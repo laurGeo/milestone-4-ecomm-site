@@ -2,7 +2,7 @@
 {% load bootstrap_tags %}
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head title="hiSTOREy">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js" integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o" crossorigin="anonymous"></script>
@@ -20,7 +20,7 @@
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-    <a class="navbar-brand" style="float: right"href="{% url 'index' %}">hiSTOREy</a>
+    <a class="navbar-brand" style="float: right" href="{% url 'index' %}">hiSTOREy</a>
     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
         {% if user.is_authenticated %}
           <li class="nav-item active">
@@ -67,8 +67,7 @@
     
 </body>
 <footer class="page-footer font-small blue pt-4 bg-warning">
-
-  <!-- Footer Links -->
+ <!-- Footer Links -->
   <div class="container-fluid text-center text-md-left">
 
     <!-- Grid row -->

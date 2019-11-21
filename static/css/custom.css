@@ -1,12 +1,15 @@
 @import url('https://fonts.googleapis.com/css?family=Comfortaa&display=swap');
 
-p, h1, h2, h3{
+p, h1, h2, h3, a{
     font-family: 'Comfortaa', cursive;
 }
 body {
     font-family: Arial;
+    background-color: #FFFFCC;
 }
-
+.card{
+    background-color: lightyellow;
+}
 footer {
     margin-top: 40px;
     padding-top: 20px;

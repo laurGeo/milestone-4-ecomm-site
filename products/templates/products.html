@@ -1,5 +1,5 @@
 {% extends "base.html" %} {% block content %}
-<div class="display">
+<div class="display" style="padding:20px">
 
             <form action="{% url 'search' %}" method="get"class="active-purple-3 active-purple-4 mb-4">
                 <input class="form-control" type="text" name="q">
@@ -15,7 +15,7 @@
                   <div class="card-body">
                     <h5 class="card-title">{{ product.name }}</h5>
                     <p class="card-text">${{product.price}}</p>
-                    <a href="{% url 'view_specific_product' product.id %}"class="btn btn-primary">View more</a>
+                    <a href="{% url 'view_specific_product' product.id %}"class="btn btn-primary">See more</a>
                   </div>
                 </div>
             </div>

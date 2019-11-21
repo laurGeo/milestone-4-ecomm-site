@@ -10,117 +10,31 @@
             <p>You are logged in with this email: {{user.email}}</p>
             <h3>Orders</h3>
             <p>This is a list of all the orders you have made in the past:</p>
-                <!--<div class="row">-->
-                <!--    <div class="col s3 m3">-->
-                <!--    <div class="card horizontal">-->
-                <!--      <div class="card-image">-->
-                <!--        <img src="https://lorempixel.com/100/190/nature/3">-->
-                <!--      </div>-->
-                <!--      <div class="card-stacked">-->
-                <!--        <div class="card-content">-->
-                <!--          <p>This is the first order</p>-->
-                <!--        </div>-->
-                <!--        <div class="card-action">-->
-                <!--          <a href="#">This is a link</a>-->
-                <!--        </div>-->
-                <!--      </div>-->
-                <!--    </div>-->
-                <!--  </div>-->
-                <!--  <div class="col s3 m3">-->
-                <!--    <div class="card horizontal">-->
-                <!--      <div class="card-image">-->
-                <!--        <img src="https://lorempixel.com/100/190/nature/2">-->
-                <!--      </div>-->
-                <!--      <div class="card-stacked">-->
-                <!--        <div class="card-content">-->
-                <!--          <p>This is the second order</p>-->
-                <!--        </div>-->
-                <!--        <div class="card-action">-->
-                <!--          <a href="#">This is a link</a>-->
-                <!--        </div>-->
-                <!--      </div>-->
-                <!--    </div>-->
-                <!--  </div>-->
-                <!--  <div class="col s3 m3">-->
-                <!--    <div class="card horizontal">-->
-                <!--      <div class="card-image">-->
-                <!--        <img src="https://lorempixel.com/100/190/nature/1">-->
-                <!--      </div>-->
-                <!--      <div class="card-stacked">-->
-                <!--        <div class="card-content">-->
-                <!--          <p>This is the third order</p>-->
-                <!--        </div>-->
-                <!--        <div class="card-action">-->
-                <!--          <a href="#">This is a link</a>-->
-                <!--        </div>-->
-                <!--      </div>-->
-                <!--    </div>-->
-                <!--  </div>-->
-                <!--</div>-->
-                
-            {% for order in orders %}
-            <div class="col-md-12 col-sm-12 col-lg-4">
-                <div class="card">
-                  <img class="card-img-top" style="height: 200px" alt="Card image cap">
-                  <div class="card-body">
-                    <h5 class="card-title">{{ order.name}}</h5>
-                    <p class="card-text"></p>
-                    <a href=""class="btn btn-primary">View more</a>
-                  </div>
-                </div>
-            </div>
+            
+             <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Logged in user</th>
+                    <th scope="col">Full Name</th>
+                    <th scope="col">Number</th>
+                    <th scope="col">Date</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {% for order in orders %}
+                  <tr>
+                    <th scope="row"></th>
+                    <td>{{order.user}}</td>
+                    <td>{{order.full_name}}</td>
+                    <td>{{order.phone_number}}</td>
+                    <td>{{order.date}}</td>
+                    {% endfor %}
+                  </tr>
+                </tbody>
+              </table>
 
-    {% endfor %}
-            <h3>In process</h3>
-            <p>Here are your current orders being processed at the moment.</p>
-            <div class="row">
-                    <div class="col s3 m3">
-                    <div class="card horizontal">
-                      <div class="card-image">
-                        <img src="https://lorempixel.com/100/190/nature/6">
-                      </div>
-                      <div class="card-stacked">
-                        <div class="card-content">
-                          <p>This is the first order in process</p>
-                        </div>
-                        <div class="card-action">
-                          <a href="#">This is a link</a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col s3 m3">
-                    <div class="card horizontal">
-                      <div class="card-image">
-                        <img src="https://lorempixel.com/100/190/nature/5">
-                      </div>
-                      <div class="card-stacked">
-                        <div class="card-content">
-                          <p>This is the second order in process</p>
-                        </div>
-                        <div class="card-action">
-                          <a href="#">This is a link</a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col s3 m3">
-                    <div class="card horizontal">
-                      <div class="card-image">
-                        <img src="https://lorempixel.com/100/190/nature/4">
-                      </div>
-                      <div class="card-stacked">
-                        <div class="card-content">
-                          <p>This is the third order in process</p>
-                        </div>
-                        <div class="card-action">
-                          <a href="#">This is a link</a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-        </div>
+              </div>
             </div>
   </div>
 </div>

@@ -34,19 +34,20 @@ Cart - The user has a cart they can view. This contains all the items the user h
 Checkout - This is where the user can put in their credit card details and make the purchase
 Account - This is where the user accounts are stored. The user can click on the ‘Profile’ button on the nav bar to view their profile. This contains information about the user such as the name and email address. In an ideal world this would contain all previous orders made by the users and the orders that the site are currently processing for the user. This would contain details such as the status of the process, and information such as the price and date of purchase.
  
-## Bugs (or features?..) ##
-Admittedly, my purchasing using the Stripe API does not work. This is a bug that has occurred many times throughout the Slack group but no specific result has worked. Suggested solutions included moving the stripe js file, re installing stripe, upgrading stripe, different test data.
-I believe it may be something to do with the combination of the Django/Stripe and Python versions causing something funny to happen. The issue is that the hidden field that is stripe id is not showing up. 
-Now, whitenoise is not co operating
-
-My comments do not currently work. If a user tries to add a comment it gives an error message.
+ Products - The home page is a list of all the products available on the site. When a user clicks to See More details about a product, it goes on to a separate page where more details are available. The customer can add an item to the cart from this part. A user can also view all comments related to the product from here, as well as adding their own
  
-## Existing Features ##
+ Search - From the homepage a user can search for products. This searches via the product name.
+ 
+ Pagination - The top 5 products are shown, and the user can skip on to the next set of pages if needs be. This jsut means there is not too much information on the screen at once.
+ 
+ Comments - Users may comment on products. This is to help other users when purchasing. User must fill out a form of username, comment, rating. When a user visits a products specific page they can view comments on that particular producr, and can see who wrote them. They have the oppertunity to comment themselves also.
+ 
+ Orders - when a user makes an order it is saved in the backend. It is associated with that user based on who is logged in. So a user will have an order history which can be viewed from their Profile.
+  
+ Profile - A user can see their information from the profile page. This has basic information such as the info the user used to sign up with like name and email. Users may also view their order history. This is a table that appears containing the dates of the orders, and who made the purchase as well as the full name on the credit card that made the purchase.
  
 ## Features Left to Implement ##
 Allowing a user to bid on the products - the idea behind this is to add the functionality onto the ‘quick add’ menu on the products page. The user would have the option to purchase the product immediately for a high price or start bidding. 
-
-Allowing users to view their previous purchases. This would be added onto the users profile. This could involve adding a new db entry for each purchase made. This could have a primary key of user id, which is how it would link to the customer.
 
 ## Technologies Used ##
 - jQuery - dom manipulation
@@ -61,22 +62,26 @@ Allowing users to view their previous purchases. This would be added onto the us
 
 ## Testing ##
 Chrome Dev tools:
-I tested the different screen sizes to make sure they display correctly
+I tested the different screen sizes to make sure they display correctly. I also used a Samsung phone.
 
 Manual Testing:
 
-- Adding a new product from the Django backend
-- Adding products to basket
+- Adding a new product from the Django backend, make sure it is fully visible on the front end
+- Adding products to basket, to see that the notificiation button appears beside the cart, and also so that when a user visits their cart the item is there
+- purchasing an item so that it adds to basket, and the user can then purchase the items in the basket
 - Exceeding max number which is 100
-- Adding 0 products
-- Creating products that do not pass validation
+- Adding 0 products and trying to purchase
+- Creating products that do not pass validation, al forms have  some form of validation on them
 - Using int instead of string
 - Using string instead of int
 - Using over 2 decimal places
 - Using over 254 characters
-- Clicking on every link on the page
+- Clicking on every link on the page, ensuring there are no dead links and that each one works as it should
+- Adding comments
+- Adding comments to the same products, using different accounts
+- Running code through the html validator
 
-Automatic Testing:
+Automated Testing:
 
 Ideally all these tests should have been created in python, and run on the CI build. Ideally using a test framework such as jasmin.
 
@@ -87,6 +92,39 @@ https://ecomm-store.herokuapp.com/
  
 Those vars are stored in a file that is included in gitignore in order to run locally.
 It is using Travis Continuous Integration. This is to ensure that with every push the build passes.
+Heroku Deployment
+Instructions :
+
+Create a requirements.txt file using the terminal command pip freeze > requirements.txt.
+
+Create a Procfile with the terminal command echo web: python app.py > Procfile.
+
+On Heroku create a new app, "Deploy" > "Deployment method" > GitHub.
+
+Link to your Github repository you want to use
+
+To look for your configuration variables in Heroku, click on "Settings" > "Reveal Config Vars".
+
+Set your configuration variables:
+
+Key	Value
+HOSTNAME	
+SECRET_KEY	
+STRIPE_CANCEL_URL	
+STRIPE_PUBLISHABLE	
+STRIPE_SECRET
+STRIPE_SUCCESS_URL	
+From the command line of your local IDE:
+
+Enter the heroku postres shell
+Migrate the database models
+Create your superuser account in your new database
+Instructions on how to do these steps can be found in the heroku devcenter documentation.
+
+In your heroku dashboard, in Deploy, choose whether you want to deploy after a Continuous Integration build has passed. I selected true as i have Travis CI running.
+
+Click View App
+
 ## Credits ##
  
 Media
